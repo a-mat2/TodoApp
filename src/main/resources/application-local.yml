@@ -1,0 +1,27 @@
+spring:
+  h2.console:
+    enabled: true
+    path: '/console'
+  datasource:
+    url: 'jdbc:h2:file:./todo-db'
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    url: 'jdbc:h2:file:./todo-db'
+    user: ''
+    password: ''
+    baseline-on-migrate: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#keycloak:
+#  auth-server-url: 'http://localhost:8180/auth'
+#  realm: 'TodoApp'
+#  resource: 'todo-spring-client'
+#  public-client: true
+
